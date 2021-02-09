@@ -1,0 +1,18 @@
+<form class="example-form">
+	<mat-form-field class="example-full-width">
+		<mat-label>ISIN</mat-label>
+		<input type="text"
+           placeholder="Ingrese un ISIN"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+		<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+			<mat-option *ngFor="let option of options" [value]="option.value" multiLineOption>
+				<h4 mat-line>{{ option.value }}</h4>
+				<p mat-line>{{ option.description }}</p>
+			</mat-option>
+		</mat-autocomplete>
+
+	</mat-form-field>
+</form>
